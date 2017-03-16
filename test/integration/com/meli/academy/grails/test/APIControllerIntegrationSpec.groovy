@@ -12,4 +12,11 @@ class APIControllerIntegrationSpec extends IntegrationSpec {
 
     void "test something"() {
     }
+	
+	void "Prueba show categoria"(){
+		def apiController = new APIController();
+		def categoria = new Categoria(nombre:"Auto");
+		apiController.showCategoria(categoria);
+		assertEquals("Auto", apiController.response.contentAsString)
+	}
 }
